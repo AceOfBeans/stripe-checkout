@@ -21,7 +21,7 @@ var handleFetchResult = function (result) {
 // Create a Checkout Session with the selected plan ID
 var createCheckoutSession = function (priceId) {
   return fetch(
-    `${process.env.LAMBDA_URL}/typeform-functions/create-checkout-session`,
+    `${secrets.LAMBDA_URL}/typeform-functions/create-checkout-session`,
     {
       method: "GET",
       headers: {
@@ -45,8 +45,8 @@ var showErrorMessage = function (message) {
 };
 
 /* Get your Stripe publishable key to initialize Stripe.js */
-var publishableKey = process.env.STRIPE_PK; //json.publishableKey;
-var priceId = process.env.STRIPE_PRODUCT; //json.basicPrice;
+var publishableKey = secrets.STRIPE_PK; //json.publishableKey;
+var priceId = secrets.STRIPE_PRODUCT; //json.basicPrice;
 //var proPriceId = json.proPrice;
 
 var stripe = Stripe(publishableKey);

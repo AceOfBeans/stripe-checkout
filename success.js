@@ -4,7 +4,7 @@ let customerId;
 
 if (sessionId) {
   fetch(
-    `${process.env.LAMBDA_URL}/typeform-functions/checkout-session?sessionId=` +
+    `${secrets.LAMBDA_URL}/typeform-functions/checkout-session?sessionId=` +
       sessionId
   )
     .then(function (result) {
@@ -33,7 +33,7 @@ if (sessionId) {
   const manageBillingForm = document.querySelector("#manage-billing-form");
   manageBillingForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    fetch(`${process.env.LAMBDA_URL}/typeform-functions/customer-portal`, {
+    fetch(`${secrets.LAMBDA_URL}/typeform-functions/customer-portal`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
