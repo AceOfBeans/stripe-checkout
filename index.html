@@ -10,10 +10,30 @@
     <!-- Load Stripe.js on your website. -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="./script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
-    <div class="container">
+    <div class="togethere-background"></div>
+    <div class="sr-root">
+      <div class="sr-main">
+        <header class="sr-header">
+          <div class="sr-header__logo"></div>
+        </header>
+        <h1>Setup coffee subscription</h1>
+        <div class="price-table-container">
+          <section>
+            <img src="./img/BaristaValetLogo.png" width="120" height="120" />
+            <div class="name">1 coffee a day M-F</div>
+            <div class="price">$15</div>
+            <div class="duration">per week</div>
+            <button id="basic-plan-btn">Continue</button>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div id="error-message" class="error-message"></div>
+    <!-- <div class="container">
       <div class="header-logo">
         <img src="./img/BaristaValetScript.png" />
       </div>
@@ -27,7 +47,7 @@
         <button id="basic-plan-btn">Continue</button>
       </div>
     </div>
-    <div id="error-message" class="error-message"></div>
+    <div id="error-message" class="error-message"></div> -->
   </body>
 </html>
 

@@ -3,7 +3,7 @@ const sessionId = urlParams.get("session_id");
 let customerId;
 
 if (sessionId) {
-  fetch(
+  /* fetch(
     `https://1vvgf51qqj.execute-api.us-east-1.amazonaws.com/Prod/typeform-functions/checkout-session?sessionId=` +
       sessionId
   )
@@ -25,7 +25,7 @@ if (sessionId) {
     })
     .catch(function (err) {
       console.log("Error when fetching Checkout session", err);
-    });
+    }); */
 
   // In production, this should check CSRF, and not pass the session ID.
   // The customer ID for the portal should be pulled from the

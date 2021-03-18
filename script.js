@@ -44,7 +44,9 @@ var showErrorMessage = function (message) {
   errorEl.style.display = "block";
 };
 
-fetch("/setup")
+fetch(
+  "https://1vvgf51qqj.execute-api.us-east-1.amazonaws.com/Prod/typeform-functions/setup"
+)
   .then(handleFetchResult)
   .then(function (json) {
     var publishableKey = json.publishableKey;
