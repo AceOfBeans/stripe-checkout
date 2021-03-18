@@ -4,7 +4,7 @@ let customerId;
 
 if (sessionId) {
   fetch(
-    `${secrets.LAMBDA_URL}/typeform-functions/checkout-session?sessionId=` +
+    `https://1vvgf51qqj.execute-api.us-east-1.amazonaws.com/Prod/typeform-functions/checkout-session?sessionId=` +
       sessionId
   )
     .then(function (result) {
@@ -33,15 +33,18 @@ if (sessionId) {
   const manageBillingForm = document.querySelector("#manage-billing-form");
   manageBillingForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    fetch(`${secrets.LAMBDA_URL}/typeform-functions/customer-portal`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        sessionId: sessionId,
-      }),
-    })
+    fetch(
+      `https://1vvgf51qqj.execute-api.us-east-1.amazonaws.com/Prod/typeform-functions/customer-portal`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sessionId: sessionId,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         window.location.href = data.url;
